@@ -32,23 +32,7 @@
 
     on click the timeblock will switch to an input for an event 
     submit button 
-    <div class="modal" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+
 
     save the event "" in local storage 
 */
@@ -56,5 +40,48 @@
 var currentDay = document.querySelector("#currentDay")
 var container = document.querySelector(".container")
 
+const rowsArray = document.querySelectorAll(".row")
+
 currentDay.innerHTML = moment().format("[Today is] dddd, MMMM Do YYYY <br><br> h:mm:ss a")
 
+var currentHour = moment().format('H')
+
+var hourPast = hourPast < currentHour
+var hourNow = currentTime
+var hourFuture = hourFuture < currentHour
+
+
+rowsArray.forEach(row => {
+    let 
+        rowIdString = row.id, rowHour
+    if (rowIdString) {
+        rowHour = parseInt(rowIdString);
+    }
+    console.log(rowIdString)
+    console.log(rowHour)
+    
+});
+// Array.from(rows).forEach(row => {
+//     let
+//       rowIdString = row.id,
+//       rowHour;
+//     if (rowIdString) {
+//       rowHour = parseInt(rowIdString);
+//     }
+//     if (rowHour) {
+//       // Compares row id to current hour and sets color accordingly
+//       if (currentHour === rowHour) {
+//         setColor(row, "red");
+//       } else if ((currentHour < rowHour) && (currentHour > rowHour - 6)) {
+//         setColor(row, "green");
+//       } else if ((currentHour > rowHour) && (currentHour < rowHour + 6)) {
+//         setColor(row, "lightgrey");
+//       } else {
+//         setColor(row, "white");
+//       }
+//     }
+//   });
+  
+//   function setColor(element, color) {
+//     element.style.backgroundColor = color;
+//   }
