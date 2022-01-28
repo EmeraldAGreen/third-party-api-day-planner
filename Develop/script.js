@@ -1,14 +1,11 @@
 // ## User Story
 
-// ```md
 // AS AN employee with a busy schedule
 // I WANT to add important events to a daily planner
 // SO THAT I can manage my time effectively
-// ```
 
 // ## Acceptance Criteria
 
-// ```md
 // GIVEN I am using a daily planner to create a schedule
 // WHEN I open the planner
 // THEN the current day is displayed at the top of the calendar
@@ -22,20 +19,6 @@
 // THEN the text for that event is saved in local storage
 // WHEN I refresh the page
 // THEN the saved events persist
-
-/* Top of Screen
-    planner displays current day at the top of the calendar in the currentDay <p>
-    Bottom of Screen
-    planner displays timeblocks in div container for 8-5 hours
-
-    planner timeblocks are classed with different colors to indicate past, present, or future 
-
-    on click the timeblock will switch to an input for an event 
-    submit button 
-
-
-    save the event "" in local storage 
-*/
 
 var currentDay = document.querySelector("#currentDay")
 var container = document.querySelector(".container")
@@ -61,3 +44,23 @@ $.each(rowsArray, function (i, dayHour) {
     }
   });
 
+var submitButton = $(".saveEvent")
+
+
+submitButton.on("click", function(){
+    var eventText = $(this).siblings(".form-control").val()
+    console.log(eventText)
+    var eventTime = $(this).siblings(".dayHour").text()
+    console.log(eventTime)
+    localStorage.setItem(eventTime ,eventText)
+})
+
+$("#nine-am").val(localStorage.getItem("9 AM"))
+$("#ten-am").val(localStorage.getItem("10 AM"))
+$("#eleven-am").val(localStorage.getItem("11 AM"))
+$("#twelve-pm").val(localStorage.getItem("12 PM"))
+$("#one-pm").val(localStorage.getItem("1 PM"))
+$("#two-pm").val(localStorage.getItem("2 PM"))
+$("#three-pm").val(localStorage.getItem("3 PM"))
+$("#four-pm").val(localStorage.getItem("4 PM"))
+$("#five-pm").val(localStorage.getItem("5 PM"))
