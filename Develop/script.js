@@ -40,48 +40,24 @@
 var currentDay = document.querySelector("#currentDay")
 var container = document.querySelector(".container")
 
-const rowsArray = document.querySelectorAll(".row")
-
 currentDay.innerHTML = moment().format("[Today is] dddd, MMMM Do YYYY <br><br> h:mm:ss a")
 
-var currentHour = moment().format('H')
-
-var hourPast = hourPast < currentHour
-var hourNow = currentTime
-var hourFuture = hourFuture < currentHour
+var currentHour = parseInt(moment().format("H"))
+console.log(currentHour)
 
 
-rowsArray.forEach(row => {
-    let 
-        rowIdString = row.id, rowHour
-    if (rowIdString) {
-        rowHour = parseInt(rowIdString);
+const rowsArray = document.querySelectorAll(".dayHour")
+console.log(rowsArray)
+
+$.each(rowsArray, function (i, dayHour) {
+    var rowHourId = parseInt($(this).attr("id"));
+    console.log(rowHourId)
+    if (rowHourId === currentHour) {
+      $(this).next().addClass("present");
+    } else if (rowHourId < currentHour) {
+      $(this).next().addClass("past");
+    } else if (rowHourId > currentHour) {
+      $(this).next().addClass("future");
     }
-    console.log(rowIdString)
-    console.log(rowHour)
-    
-});
-// Array.from(rows).forEach(row => {
-//     let
-//       rowIdString = row.id,
-//       rowHour;
-//     if (rowIdString) {
-//       rowHour = parseInt(rowIdString);
-//     }
-//     if (rowHour) {
-//       // Compares row id to current hour and sets color accordingly
-//       if (currentHour === rowHour) {
-//         setColor(row, "red");
-//       } else if ((currentHour < rowHour) && (currentHour > rowHour - 6)) {
-//         setColor(row, "green");
-//       } else if ((currentHour > rowHour) && (currentHour < rowHour + 6)) {
-//         setColor(row, "lightgrey");
-//       } else {
-//         setColor(row, "white");
-//       }
-//     }
-//   });
-  
-//   function setColor(element, color) {
-//     element.style.backgroundColor = color;
-//   }
+  });
+
