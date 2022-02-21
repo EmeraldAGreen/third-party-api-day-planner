@@ -10,6 +10,6 @@ For this assignment, I created a planner application that lets the user save eve
 ## Link to Deployed App 
 https://emeraldagreen.github.io/third-party-api-day-planner/ 
 
-##Contact Me
+## Contact Me
 Email: emeraldthedeveloper@gmail.com
 LinkedIn: https://www.linkedin.com/in/emeraldarielgreen/
