@@ -13,3 +13,6 @@ https://emeraldagreen.github.io/third-party-api-day-planner/
 ## Contact Me
 Email: emeraldthedeveloper@gmail.com
 LinkedIn: https://www.linkedin.com/in/emeraldarielgreen/
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
